@@ -1,0 +1,57 @@
+{
+  "scenario": "Production turnaround estimate",
+  "task": "Predict hours to complete a presentation or document production request.",
+  "model": "Random forest regressor",
+  "sample_input": {
+    "inputs": [
+      {
+        "page_count": 45,
+        "asset_count": 18,
+        "complexity": 3,
+        "queue_depth": 8,
+        "urgent": 1
+      }
+    ]
+  },
+  "expected_output_fields": "predicted_hours, estimated_completion_utc",
+  "synthetic_demo_model": true,
+  "ordered_features": [
+    "page_count",
+    "asset_count",
+    "complexity",
+    "queue_depth",
+    "urgent"
+  ],
+  "ranges": [
+    [
+      "page_count",
+      0,
+      10000,
+      "int"
+    ],
+    [
+      "asset_count",
+      0,
+      10000,
+      "int"
+    ],
+    [
+      "complexity",
+      1,
+      5,
+      "int"
+    ],
+    [
+      "queue_depth",
+      0,
+      10000,
+      "int"
+    ],
+    [
+      "urgent",
+      0,
+      1,
+      "int"
+    ]
+  ]
+}

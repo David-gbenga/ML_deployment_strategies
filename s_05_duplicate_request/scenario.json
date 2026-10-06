@@ -1,0 +1,14 @@
+{
+  "scenario": "Duplicate request detection",
+  "task": "Identify whether a newly submitted request resembles an open request.",
+  "model": "TF IDF vectorizer plus nearest neighbours index",
+  "sample_input": {
+    "inputs": [
+      {
+        "text": "Please update the Acme pitch deck for Thursday"
+      }
+    ]
+  },
+  "expected_output_fields": "matched_request_id, similarity, potential_duplicate",
+  "synthetic_demo_model": true
+}

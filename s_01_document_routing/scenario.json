@@ -1,0 +1,14 @@
+{
+  "scenario": "Document routing",
+  "task": "Classify incoming service text into legal, finance, marketing, or general operations.",
+  "model": "TF IDF plus logistic regression",
+  "sample_input": {
+    "inputs": [
+      {
+        "text": "Please review the contract clause and redline."
+      }
+    ]
+  },
+  "expected_output_fields": "label, confidence, review_required",
+  "synthetic_demo_model": true
+}

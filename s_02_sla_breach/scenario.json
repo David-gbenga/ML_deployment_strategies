@@ -1,0 +1,57 @@
+{
+  "scenario": "SLA breach risk",
+  "task": "Estimate probability that a document production job breaches its SLA.",
+  "model": "Random forest classifier",
+  "sample_input": {
+    "inputs": [
+      {
+        "page_count": 120,
+        "complexity": 3,
+        "queue_depth": 18,
+        "hours_to_deadline": 4.0,
+        "priority": 2
+      }
+    ]
+  },
+  "expected_output_fields": "breach_probability, risk_level, manual_review",
+  "synthetic_demo_model": true,
+  "ordered_features": [
+    "page_count",
+    "complexity",
+    "queue_depth",
+    "hours_to_deadline",
+    "priority"
+  ],
+  "ranges": [
+    [
+      "page_count",
+      0,
+      10000,
+      "int"
+    ],
+    [
+      "complexity",
+      1,
+      5,
+      "int"
+    ],
+    [
+      "queue_depth",
+      0,
+      10000,
+      "int"
+    ],
+    [
+      "hours_to_deadline",
+      0,
+      720,
+      "number"
+    ],
+    [
+      "priority",
+      1,
+      3,
+      "int"
+    ]
+  ]
+}

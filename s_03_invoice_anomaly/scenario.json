@@ -1,0 +1,49 @@
+{
+  "scenario": "Invoice anomaly flagging",
+  "task": "Score invoice line items for unusual values before human billing review.",
+  "model": "Isolation Forest",
+  "sample_input": {
+    "inputs": [
+      {
+        "amount_gbp": 8500.0,
+        "hours_billed": 14.0,
+        "rate_gbp": 210.0,
+        "revision_count": 7
+      }
+    ]
+  },
+  "expected_output_fields": "anomaly_score, flagged, review_required",
+  "synthetic_demo_model": true,
+  "ordered_features": [
+    "amount_gbp",
+    "hours_billed",
+    "rate_gbp",
+    "revision_count"
+  ],
+  "ranges": [
+    [
+      "amount_gbp",
+      0,
+      10000000,
+      "number"
+    ],
+    [
+      "hours_billed",
+      0,
+      100000,
+      "number"
+    ],
+    [
+      "rate_gbp",
+      0,
+      100000,
+      "number"
+    ],
+    [
+      "revision_count",
+      0,
+      10000,
+      "int"
+    ]
+  ]
+}
