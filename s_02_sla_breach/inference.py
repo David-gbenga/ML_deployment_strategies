@@ -25,13 +25,7 @@ def _object(payload):
     return inputs
 
 
-def _text(item):
-    if not isinstance(item, dict) or set(item) != {'text'}:
-        raise ModelInputError('Each record requires only text')
-    value = item['text']
-    if not isinstance(value, str) or not 1 <= len(value.strip()) <= 4000:
-        raise ModelInputError('text must contain 1 to 4000 characters')
-    return value.strip()
+
 
 FIELDS = [('page_count', 0, 10000, 'int'), ('complexity', 1, 5, 'int'), ('queue_depth', 0, 10000, 'int'), ('hours_to_deadline', 0, 720, 'number'), ('priority', 1, 3, 'int')]
 
@@ -58,3 +52,4 @@ def predict(payload):
         p = float(probability)
         result.append({'breach_probability': round(p, 4), 'risk_level': 'high' if p >= 0.65 else 'medium' if p >= 0.35 else 'low', 'manual_review': p >= 0.65})
     return {'predictions': result, 'model_version': 'synthetic-v1'}
+
