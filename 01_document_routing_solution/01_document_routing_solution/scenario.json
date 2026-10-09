@@ -1,0 +1,9 @@
+{
+  "title": "Document Routing \u2014 Text Classification",
+  "synthetic": true,
+  "sample_request": {
+    "text": "Please process this supplier invoice payment"
+  },
+  "python_training_version": "3.12.14",
+  "sklearn_version": "1.8.0"
+}

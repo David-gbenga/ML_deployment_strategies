@@ -1,0 +1,11 @@
+{
+  "title": "Document Turnaround \u2014 Regression",
+  "synthetic": true,
+  "sample_request": {
+    "pages": 20,
+    "images": 4,
+    "priority": 1
+  },
+  "python_training_version": "3.12.14",
+  "sklearn_version": "1.8.0"
+}
